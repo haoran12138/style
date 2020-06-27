@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .content {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        line-height: 200px;
+        text-align: center;
+        font-size: 60px;
+        background: #ccc;
+        color: #000;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content"></div>
+    <script>
+      let num = 1;
+      let oDiv = document.getElementsByClassName("content")[0];
+      let changeNum = function () {
+        oDiv.innerHTML = num++;
+      };
+      changeNum = throttle(changeNum, 200);
+
+      oDiv.addEventListener("mousemove", changeNum);
+
+      function throttle(fn, delay) {
+        let timer = false;
+        return function (...args) {
+          if (!timer) {
+            timer = setTimeout(() => {
+              fn(...args);
+              timer = false;
+              console.log(this);
+            }, delay);
+          }
+        };
+      }
+    </script>
+  </body>
+</html>
