@@ -5,3 +5,7 @@ const arr2 = arr1.map((item, index, arr) => {
 });
 
 const arr3 = arr1.map(item => item * 2);
+(function () {
+  "use strict";
+
+})();
