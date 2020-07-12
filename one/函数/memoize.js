@@ -1,18 +1,17 @@
 // 缓存函数   对于需要大量计算的函数  把每次计算的结果存入对象 调用函数时判断 是否存在该key  减少重复计算  (使用到 高阶函数 闭包 概念)
 
-// fn 有且只有一个 参数
 let memoize = function (fn) {
-  let cache = {};
-  return function (key) {
-    if (!cache[key]) {
-      cache[key] = fn.apply(this, arguments);
-    }
-    return cache[key];
-  };
+	let cache = {};
+	return function (key) {
+		if (!cache[key]) {
+			cache[key] = fn.apply(this, arguments);
+		}
+		return cache[key];
+	};
 };
 function fn(a, b) {
-  console.log("1");
-  return a * b;
+	console.log("1");
+	return a * b;
 }
 
 fn = memoize(fn);
@@ -32,14 +31,14 @@ fn(1);
  * @param {Function} hasher 散列函数
  */
 function memo(func, hasher) {
-  let cache = {};
-  return function (key) {
-    if (hasher) {
-      key = hasher.apply(this, arguments);
-    }
-    if (!cache[key]) {
-      cache[key] = func.apply(this, arguments);
-    }
-    return cache[key];
-  };
+	let cache = {};
+	return function (key) {
+		if (hasher) {
+			key = hasher.apply(this, arguments);
+		}
+		if (!cache[key]) {
+			cache[key] = func.apply(this, arguments);
+		}
+		return cache[key];
+	};
 }
