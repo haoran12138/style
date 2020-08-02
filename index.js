@@ -56,7 +56,28 @@ function commodity({ hotMax, notHotMax }) {
 		get
 	};
 }
-
+// 商品结构 {id:number,isHot:bool,...}
 function getCommodityById(id) {
-	//... ajax 请求
+	return new Promise((resolve, reject) => {
+		//... ajax 请求
+		setTimeout(() => {
+			resolve({
+				id: id,
+				isHot: getRandomHot()
+			});
+		}, 200);
+	});
+}
+
+function getRandomId() {
+	return getRandom(1, 10);
+}
+
+function getRandomHot() {
+	let rand = getRandom(1, 5);
+	return rand == 1;
+}
+
+function getRandom(min, max) {
+	return Math.floor(Math.random() * max + min);
 }
