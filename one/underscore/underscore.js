@@ -3,7 +3,7 @@
 		if (!(this instanceof _)) {
 			return new _(data);
 		}
-		this.wrapper = data;
+		this.wrapper = data;//管道中更新的数据
 	};
 	_.unique = function (arr, callback) {
 		if (Object.prototype.toString.call(arr) !== "[object Array]") {
