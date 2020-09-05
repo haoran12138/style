@@ -8,7 +8,10 @@ module.exports = {
     parser: "babel-eslint"
   },
   rules: {
-    "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
-    "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off"
+    "no-console": 1,
+    "no-debugger": 1,
+    "no-unused-vars": 1,
+    "vue/no-unused-components": 1,
+    "disable-next-line": 0
   }
 };
