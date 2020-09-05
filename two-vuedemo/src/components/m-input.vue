@@ -1,0 +1,13 @@
+<template>
+  <div>
+    <input v-bind="$attrs" v-on="$listeners" />
+  </div>
+</template>
+<script>
+export default {
+  name: "M-input",
+  created() {
+    console.log(this);
+  }
+};
+</script>
