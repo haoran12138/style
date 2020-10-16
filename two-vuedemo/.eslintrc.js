@@ -3,7 +3,7 @@ module.exports = {
   env: {
     node: true
   },
-  extends: ["plugin:vue/essential", "eslint:recommended", "@vue/prettier"],
+  extends: ["plugin:vue/essential", "plugin:vue/recommended", "eslint:recommended", "@vue/prettier"],
   parserOptions: {
     parser: "babel-eslint"
   },
@@ -11,7 +11,8 @@ module.exports = {
     "no-console": 1,
     "no-debugger": 1,
     "no-unused-vars": 1,
-    "vue/no-unused-components": 1,
-    "disable-next-line": 0
+    "disable-next-line": 0,
+    "vue/require-prop-types": 0,
+    "vue/no-unused-components": 1
   }
 };

@@ -5,9 +5,7 @@
 </template>
 <script>
 export default {
-  name: "M-input",
-  created() {
-    console.log(this);
-  }
+  name: "MInput",
+  created() {}
 };
 </script>
